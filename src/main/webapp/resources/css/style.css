@@ -1,0 +1,219 @@
+@charset "UTF-8";
+
+/*========================
+橋本追加分
+========================*/
+.list-inline {
+    padding-top: 30px;
+    font-size: large;
+    letter-spacing: 0.3em;
+}
+
+.resister {
+    padding-left: 10px;
+    border-left: 1px solid #003A6B;
+    border-right: 1px solid #003A6B;
+}
+
+.login {
+    border-right: 1px solid #003A6B;
+}
+
+.cart {
+    border-right: 1px solid #003A6B;
+}
+
+.input{
+  padding-top: 15px;
+}
+
+.list-group-item {
+    margin: 0px 0px 20px 0px;
+    /*サブメニュー項目のマージン*/
+    padding: 20px 0px 30px 0px;
+    /*サブメニュー項目のパディング*/
+}
+
+.dropdown:hover > .dropdown-menu{
+  display: block;
+}
+
+/*
+category.htmlで使用
+*/
+.discographyTableImg01 {
+    width: 122px;
+    float: left;
+    margin-right: 8px;
+    padding: 0;
+}
+
+.discographyTable01In{
+    float: left;
+    padding-top: 2px;
+}
+
+.cfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.aaaa {
+    text-align: right;
+    margin: 0px 0px 0px 0px;
+    padding: 80px 0px 0px 0px;
+
+}
+  .table{
+    margin-bottom: 0px;
+    }
+
+.bbbb {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 0px 0px 25px;
+    
+}
+
+/*
+rireki.htmlで使用
+*/
+
+.aaaaaaa {
+    border-collapse:collapse;
+    border:none;
+}
+
+.asd {
+    margin-bottom: 0px;
+}
+
+.left-none{
+    border-left-style:none; 
+}
+.right-none{
+    border-right-style: none;
+
+}
+.float-left{
+    float: left;
+    padding-right: 3px; 
+    margin-right: 3px;
+}
+
+.img-margin{
+    padding-right: 3px; 
+    margin-right: 3px;
+    text-align: center;
+}
+
+
+/*========================
+大池くん追加分
+========================*/
+
+#headerFirstWrap {
+  width: 100%;
+  border-bottom: 1px solid #c1c1c1;
+    margin: 30px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+#headerFirst {
+  margin: 0 auto;
+  padding: 5px 0;
+  width: 960px;
+  text-align: left;
+  display: block;
+  min-height: 1%;
+}
+#headerFirst::after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+#headerInfo {
+  float: left;
+}
+#headerLinkBox {
+  float: right;
+    margin: 0px 0px 20px 20px;
+    padding: 0px 0px 0px 20px;
+}
+#headerLogo {
+  font-size: xx-large;
+    margin: 20px 0px 20px 0px;
+    padding: 20px 0px 20px 0px;
+}
+.clearfix {
+    display: block;
+    overflow: hidden;
+}
+.imgL {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+.pagetop-pc {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+#footerWrap {
+  border-top: 2px solid #c1c1c1;
+  background-color: #f2f2f2;
+  padding: 15px 0 20px;
+  width: 100%;
+  margin-bottom: -20px;
+}
+#footerIn {
+    margin: 0 auto;
+    width: 960px;
+    text-align: left;
+}
+#copyright {
+    text-align: center;
+    font-size: 84%;
+    color: black;
+    margin-top: 40px;
+}
+.pankuzu li,
+.imgL li,
+#headerLinkBox li {
+  list-style-type: none;
+}
+
+a, a:hover, a:visited, a:link, a:active {
+color: #000000 ;
+}
+
+
+1
+input#submit_button {
+    width: 150px;
+    height: 50px;
+}
+
+
+.search {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+
+}
+
+.dropdown:hover > .dropdown-menu{
+  display: block;
+}
+
+.body_size {
+    margin:10px 0px 0px 0px;
+    padding: 20px 0px 0px 0px;
+
+}
