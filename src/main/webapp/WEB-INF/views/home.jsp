@@ -17,7 +17,6 @@
     <!-- jQuery読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- BootstrapのJS読み込み -->
-    <script src="../js/bootstrap.min.js"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </head>
 
@@ -29,7 +28,7 @@
                     <div id="headerFirstWrap">
                         <div id="headerFirst">
                             <div id="headerInfo">
-                                <p id="headerTxt01">幅広いジャンルの音楽をお届けするCD通販サイト</p>
+                                <p id="headerTxt01">幅広いジャンルの音楽をお届けするCD通販サイトああああ</p>
                                 <div id="headerInfoIn">
                                     <a href="index.html"><p id="headerLogo">MOCK</p></a>
                                     <div id="headerFortune">
@@ -81,7 +80,7 @@
                 </div>
                 <div class="col-sm-9">
                     <a href="product.html">
-                        <img src="<c:url value="resources/images/07_mizukinana.jpg" /> class="img-responsive" width="" height="" alt="">
+                        <img src="/resources/images/07_mizukinana.jpg" class="img-responsive" width="" height="" alt="">
                     </a>
                     <hr>
                     <h3>News</h3>
@@ -134,33 +133,33 @@
                     <table>
                         <tr>
                             <td class="col-sm-1">
-                                <img src="../images/ranking1.gif" class="img-responsive" width="" height="" alt="">
+                                <img src="/resources/images/ranking1.gif" class="img-responsive" width="" height="" alt="">
                             </td>
                             <td class="col-sm-2">
                                 <a href="product.html">
-                                    <img src="../images/F56539E0.jpg" class="img-responsive" width="120" height="120" alt="">
+                                    <img src="resources/images/F56539E0.jpg" class="img-responsive" width="120" height="120" alt="">
                                 </a>
                             </td>
                             <td>
                                 CRAZY KEN BAND<br>ALL TIME BEST “愛の世界”
                             </td>
                             <td class="col-sm-1">
-                             <img src="../images/ranking2.gif" class="img-responsive" width="" height="" alt="">
+                             <img src="/resources/images/ranking2.gif" class="img-responsive" width="" height="" alt="">
                          </td>
                          <td class="col-sm-2">
                              <a href="product.html">
-                                <img src="../images/F5653691.jpg" class="img-responsive" width="120" height="120" alt="">
+                                <img src="resources/images/F5653691.jpg" class="img-responsive" width="120" height="120" alt="">
                             </a>
                         </td>
                         <td>
                             CRAZY KEN BAND<br>ALL TIME BEST “愛の世界”
                         </td>
                         <td class="col-sm-1">
-                            <img src="../images/ranking3.gif" class="img-responsive" width="" height="" alt="">
+                            <img src="resources/images/ranking3.gif" class="img-responsive" width="" height="" alt="">
                         </td>
                         <td class="col-sm-2">
                             <a href="product.html">
-                                <img src="../images/F5655F56.jpg" class="img-responsive" width="120" height="120" alt="">
+                                <img src="resources/images/F5655F56.jpg" class="img-responsive" width="120" height="120" alt="">
                             </a>
                         </td>
                         <td>
@@ -175,31 +174,31 @@
                     <tr>
                         <td class="col-sm-1.8">
                             <a href="product.html">
-                                <img src="../images/FB5B1691.jpg" class="img-responsive" width="120" height="120" alt="">
+                                <img src="resources/images/FB5B1691.jpg" class="img-responsive" width="120" height="120" alt="">
                             </a>
                             <p>CRAZY KEN BAND<br>ALL TIME BEST “愛の世界”</p>
                         </td>
                         <td class="col-sm-1.8">
                             <a href="product.html">
-                                <img src="../images/4988002738120.jpg" class="img-responsive" width="120" height="120" alt="">
+                                <img src="resources/images/4988002738120.jpg" class="img-responsive" width="120" height="120" alt="">
                             </a>
                             <p>CRAZY KEN BAND<br>ALL TIME BEST “愛の世界”</p>
                         </td>
                         <td class="col-sm-1.8">
                             <a href="product.html">
-                                <img src="../images/4997184979993.jpg" class="img-responsive" width="120" height="120" alt="">
+                                <img src="resources/images/4997184979993.jpg" class="img-responsive" width="120" height="120" alt="">
                             </a>
                             <p>CRAZY KEN BAND<br>ALL TIME BEST “愛の世界”</p>
                         </td>
                         <td class="col-sm-1.8">
                             <a href="product.html">
-                                <img src="../images/F565121C.jpg" class="img-responsive" width="120" height="120" alt="">
+                                <img src="resources/images/F565121C.jpg" class="img-responsive" width="120" height="120" alt="">
                             </a>
                             <p>CRAZY KEN BAND<br>ALL TIME BEST “愛の世界”</p>
                         </td>
                         <td class="col-sm-1.8">
                             <a href="product.html">
-                                <img src="../images/F56539F1.jpg" class="img-responsive" width="120" height="120" alt="">
+                                <img src="resources/images/F56539F1.jpg" class="img-responsive" width="120" height="120" alt="">
                             </a>
                             <p>CRAZY KEN BAND<br>ALL TIME BEST “愛の世界”</p>
                         </td>
@@ -207,33 +206,33 @@
                     <tr>
                         <td class="col-sm-1.8">
                             <a href="product.html">
-                                <img src="../images/F5655C44.jpg" class="img-responsive" width="120" height="120" alt="">
+                                <img src="resources/images/F5655C44.jpg" class="img-responsive" width="120" height="120" alt="">
                             </a>
                             <p>CRAZY KEN BAND<br>ALL TIME BEST “愛の世界”</p>
                         </td>
 
                         <td class="col-sm-1.8">
                             <a href="product.html">
-                                <img src="../images/F5655BCD.jpg" class="img-responsive" width="120" height="120" alt="">
+                                <img src="resources/images/F5655BCD.jpg" class="img-responsive" width="120" height="120" alt="">
                             </a>
                             <p>CRAZY KEN BAND<br>ALL TIME BEST “愛の世界”</p>
                         </td>
 
                         <td class="col-sm-1.8">
                             <a href="product.html">
-                                <img src="../images/F5655BC1.jpg" class="img-responsive" width="120" height="120" alt="">
+                                <img src="resources/images/F5655BC1.jpg" class="img-responsive" width="120" height="120" alt="">
                             </a>
                             <p class="col-sm-0.5">CRAZY KEN BAND<br>ALL TIME BEST “愛の世界"</p>
                         </td>
                         <td class="col-sm-1.8">
                             <a href="product.html">
-                                <img src="../images/F5655B65.jpg" class="img-responsive" width="120" height="120" alt="">
+                                <img src="resources/images/F5655B65.jpg" class="img-responsive" width="120" height="120" alt="">
                             </a>
                             <p>CRAZY KEN BAND<br>ALL TIME BEST “愛の世界”</p>
                         </td>
                         <td class="col-sm-1.8">
                             <a href="product.html">
-                                <img src="../images/4997184980029.jpg" class="img-responsive" width="120" height="120" alt="">
+                                <img src="resources/images/4997184980029.jpg" class="img-responsive" width="120" height="120" alt="">
                             </a>
                             <p>CRAZY KEN BAND<br>ALL TIME BEST “愛の世界”</p>
                         </td>
@@ -256,4 +255,3 @@
   </div>
 </body>
 </html>
-
