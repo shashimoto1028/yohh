@@ -49,7 +49,7 @@
                                     <div class="dropdown">
                                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style="text-decoration: underline">マイページ</span></a>
                                       <ul class="dropdown-menu">
-                                        <li><a href="mymenu.html">プルフィールの変更</a></li>
+                                        <li><a href="mymenu.html">プロフィールの変更</a></li>
                                         <li><a href="rireki.html">購入履歴</a></li>
                                     </ul>
                                 </div>
