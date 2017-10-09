@@ -21,21 +21,10 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
-	<!--  mysql 接続 ここから-->
-	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
-	<beans:property name="driverClassName" value="org.gjt.mm.mysql.Driver" />
-	<beans:property name="url" value="jdbc:mysql://127.0.0.1:3306/yohh" />
-	<beans:property name="username" value="root" /><!-- ユーザIDを入力 -->
-	<beans:property name="password" value="yoHH-1234" /><!-- パスワードを入力 -->
-	</beans:bean>
-	<!--  mysql 接続 ここまで-->
-
-	<beans:bean class="org.springframework.jdbc.core.JdbcTemplate">
-	<beans:constructor-arg ref="dataSource" />
-	</beans:bean>
-
-	<context:component-scan base-package="com.example.test" />
-
-
-
+	<!-- Controllerクラスを自動でDIコンテナに登録 -->
+	<context:component-scan base-package="com.example.test.controller" />
+	<!-- Serviceを追加 -->
+	<context:component-scan base-package="com.example.test.service" />
+	<!-- persistenceを追加 -->
+	<context:component-scan base-package="com.example.test.persistence" />
 </beans:beans>
