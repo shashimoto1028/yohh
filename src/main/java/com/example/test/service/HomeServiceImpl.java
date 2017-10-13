@@ -1,5 +1,8 @@
 package com.example.test.service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +24,9 @@ public class HomeServiceImpl implements HomeService {
 	public void init(int id) {
 
 		// Mapperアクセス
-
-		ContentResult content = selectContentMapper.selectContent(id);
-		System.out.println(content.getValue());
+		Map<Integer, ContentResult> content = new HashMap<>();
+		content = selectContentMapper.selectContent(id);
+		System.out.println(content.get(1).getValue());
 
 
 
