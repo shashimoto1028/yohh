@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.test.controller.form.CategoryForm;
 import com.example.test.persistence.entity.ContentResult;
@@ -52,9 +53,10 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/category", method = RequestMethod.GET)
-	public String category(Locale locale, Model model) {
+	public String category(@RequestParam(value="category_id",required = false) String categoryId,Locale locale, Model model) {
 
 		logger.info("category()呼び出し");
+		System.out.println(categoryId);
 
 
 		return "category";
