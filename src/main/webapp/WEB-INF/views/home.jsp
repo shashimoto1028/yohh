@@ -69,14 +69,9 @@
             <div class="row body_size">
                 <div class="col-sm-3">
                     <ul class="list-group">
-                        <a href="category.html" class="list-group-item list-group-item-action">J-POP</a>
-                        <a href="category.html" class="list-group-item list-group-item-action">K-POP</a>
-                        <a href="category.html" class="list-group-item list-group-item-action">洋楽</a>
-                        <a href="category.html" class="list-group-item list-group-item-action">JAZZ</a>
-                        <a href="category.html" class="list-group-item list-group-item-action">演歌</a>
-                        <a href="category.html" class="list-group-item list-group-item-action">アニメ</a>
-                        <a href="category.html" class="list-group-item list-group-item-action">クラシック</a>
-                        <a href="category.html" class="list-group-item list-group-item-action">その他</a>
+                    <c:forEach var="map" items="${categoryMap}">
+                    		<a href="category.html" class="list-group-item list-group-item-action"><c:out value="${map.value.value}"/><br></a>
+                    </c:forEach>
                     </ul>
                 </div>
                 <div class="col-sm-9">

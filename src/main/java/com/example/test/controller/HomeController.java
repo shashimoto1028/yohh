@@ -30,23 +30,19 @@ public class HomeController {
 	@Autowired
 	MKbnService mKbnService;
 
+	// カテゴリ区分取得
+	Map<Integer, ContentResult> categoryMap= mKbnService.init("PROD_CATEGORY");
+
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 
 		logger.info("Welcome home! The client locale is {}.", locale);
-
-		// 追加
-		//Content content = new Content();
-		Map<Integer, ContentResult> categoryMap= mKbnService.init("PROD_CATEGORY");
-
-		//content.setvalue(contentResult.());
 
 		model.addAttribute("categoryMap", categoryMap );
 		System.out.println("DBから取得した結果を出力します。");
 
 		return "home";
 	}
-
-
 
 }
