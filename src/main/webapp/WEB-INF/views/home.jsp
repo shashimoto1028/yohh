@@ -69,9 +69,9 @@
             <div class="row body_size">
                 <div class="col-sm-3">
                     <ul class="list-group">
-                    <c:forEach var="map" items="${categoryMap}">
-                    		<a href="category.html" class="list-group-item list-group-item-action"><c:out value="${map.value.value}"/><br></a>
-                    </c:forEach>
+					 <c:forEach var="map" items="${categoryMap}">
+					 	<a href="${pageContext.request.contextPath}/category?category_id=${map.key}" class="list-group-item list-group-item-action"><c:out value="${map.value.value}"/><br></a>
+					 </c:forEach>
                     </ul>
                 </div>
                 <div class="col-sm-9">

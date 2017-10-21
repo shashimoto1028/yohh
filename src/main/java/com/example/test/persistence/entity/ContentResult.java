@@ -1,5 +1,6 @@
 package com.example.test.persistence.entity;
 
+
 public class ContentResult {
 
 

@@ -8,9 +8,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.example.test.controller.form.CategoryForm;
 import com.example.test.persistence.entity.ContentResult;
 import com.example.test.service.MKbnService;
 
@@ -30,6 +32,12 @@ public class HomeController {
 	//カテゴリのマップ
 	Map<Integer, ContentResult> categoryMap;
 
+	@ModelAttribute
+    public CategoryForm setUpCategoryForm() {
+
+        return new CategoryForm();
+    }
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 
@@ -39,12 +47,16 @@ public class HomeController {
 		categoryMap= mKbnService.init("PROD_CATEGORY");
 
 		model.addAttribute("categoryMap", categoryMap );
-		System.out.println("DBから取得した結果を出力します。");
 
 		return "home";
 	}
 
+	@RequestMapping(value = "/category", method = RequestMethod.GET)
+	public String category(Locale locale, Model model) {
+
+		logger.info("category()呼び出し");
 
 
-
+		return "category";
+	}
 }
