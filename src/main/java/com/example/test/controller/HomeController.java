@@ -48,7 +48,7 @@ public class HomeController {
 		//content.setvalue(contentResult.());
 
 
-		System.out.println("DBから取得した結果を出力");
+		System.out.println("DBから取得した結果を出力します。");
 
 		return "home";
 	}

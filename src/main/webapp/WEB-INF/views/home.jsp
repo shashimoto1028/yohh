@@ -20,6 +20,7 @@
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </head>
 
+
 <body>
     <div class="container">
         <header id="header" style="width:100%">
