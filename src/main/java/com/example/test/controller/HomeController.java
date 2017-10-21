@@ -23,22 +23,33 @@ public class HomeController {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
+	/**
+	 * Simply selects the home view to render by returning its name.
+	 */
 	// 追加
 	@Autowired
 	MKbnService mKbnService;
 
-	// カテゴリ区分取得
-	Map<Integer, ContentResult> categoryMap= mKbnService.init("PROD_CATEGORY");
+	//カテゴリのマップ
+	Map<Integer, ContentResult> categoryMap;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 
 		logger.info("Welcome home! The client locale is {}.", locale);
 
+		// カテゴリを取得
+		categoryMap= mKbnService.init("PROD_CATEGORY");
+
+		//content.setvalue(contentResult.());
+
 		model.addAttribute("categoryMap", categoryMap );
 		System.out.println("DBから取得した結果を出力します。");
 
 		return "home";
 	}
+
+
+
 
 }
