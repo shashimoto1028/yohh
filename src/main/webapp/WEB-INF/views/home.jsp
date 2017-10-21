@@ -81,7 +81,7 @@
                 </div>
                 <div class="col-sm-9">
                     <a href="product.html">
-                        <img src="/resources/images/07_mizukinana.jpg" class="img-responsive" width="" height="" alt="">
+                        <img src="resources/images/07_mizukinana.jpg" class="img-responsive" width="" height="" alt="">
                     </a>
                     <hr>
                     <h3>News</h3>

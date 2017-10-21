@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.test.persistence.SelectContentMapper">
-	<select id="selectContent" parameterType="int" resultType="com.example.test.persistence.entity.ContentResult">
-		SELECT seq, value FROM yohh.M_KBN WHERE SEQ=#{id}
-	</select>
-</mapper>

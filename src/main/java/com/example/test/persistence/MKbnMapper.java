@@ -6,8 +6,8 @@ import org.apache.ibatis.annotations.MapKey;
 
 import com.example.test.persistence.entity.ContentResult;
 
-public interface SelectContentMapper {
+public interface MKbnMapper {
 
 	@MapKey("seq")
-	public Map<Integer, ContentResult> selectContent(int id);
+	public Map<Integer, ContentResult> selectKbn(String kbnId);
 }

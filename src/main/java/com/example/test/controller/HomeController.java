@@ -1,8 +1,7 @@
 package com.example.test.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.test.service.HomeService;
+import com.example.test.persistence.entity.ContentResult;
+import com.example.test.service.MKbnService;
 
 
 /**
@@ -28,29 +28,25 @@ public class HomeController {
 	 */
 	// 追加
 	@Autowired
-	HomeService homeService;
+	MKbnService mKbnService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 
 		logger.info("Welcome home! The client locale is {}.", locale);
 
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-
-		String formattedDate = dateFormat.format(date);
-
-		model.addAttribute("serverTime", formattedDate );
 		// 追加
 		//Content content = new Content();
-		homeService.init(1);
+		Map<Integer, ContentResult> categoryMap= mKbnService.init("PROD_CATEGORY");
 
 		//content.setvalue(contentResult.());
 
-
+		model.addAttribute("categoryMap", categoryMap );
 		System.out.println("DBから取得した結果を出力します。");
 
 		return "home";
 	}
+
+
 
 }
