@@ -23,9 +23,6 @@ public class HomeController {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
 	// 追加
 	@Autowired
 	MKbnService mKbnService;
@@ -40,8 +37,6 @@ public class HomeController {
 
 		// カテゴリを取得
 		categoryMap= mKbnService.init("PROD_CATEGORY");
-
-		//content.setvalue(contentResult.());
 
 		model.addAttribute("categoryMap", categoryMap );
 		System.out.println("DBから取得した結果を出力します。");
