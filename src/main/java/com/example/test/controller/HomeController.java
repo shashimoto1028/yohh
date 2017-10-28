@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.test.controller.form.CategoryForm;
-import com.example.test.persistence.entity.ContentResult;
+import com.example.test.persistence.entity.MKbn;
 import com.example.test.service.MKbnService;
 
 
@@ -31,7 +31,7 @@ public class HomeController {
 	MKbnService mKbnService;
 
 	//カテゴリのマップ
-	Map<Integer, ContentResult> categoryMap;
+	Map<Integer, MKbn> categoryMap;
 
 	@ModelAttribute
     public CategoryForm setUpCategoryForm() {

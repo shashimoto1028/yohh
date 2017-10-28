@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.test.persistence.MKbnMapper;
-import com.example.test.persistence.entity.ContentResult;
+import com.example.test.persistence.entity.MKbn;
 
 @Service
 public class MKbnServiceImpl implements MKbnService {
@@ -21,10 +21,10 @@ public class MKbnServiceImpl implements MKbnService {
 	MKbnMapper mKbnMapper;
 
 	@Override
-	public Map<Integer, ContentResult> init(String kbnId) {
+	public Map<Integer, MKbn> init(String kbnId) {
 
 		// Mapperアクセス
-		Map<Integer, ContentResult> content = new LinkedHashMap<>();
+		Map<Integer, MKbn> content = new LinkedHashMap<>();
 		content = mKbnMapper.selectKbn(kbnId);
 
 		return content;

@@ -1,7 +1,7 @@
 package com.example.test.persistence.entity;
 
 
-public class ContentResult {
+public class MKbn {
 
 
 	private int seq;

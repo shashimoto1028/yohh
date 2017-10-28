@@ -4,10 +4,10 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.MapKey;
 
-import com.example.test.persistence.entity.ContentResult;
+import com.example.test.persistence.entity.MKbn;
 
 public interface MKbnMapper {
 
 	@MapKey("seq")
-	public Map<Integer, ContentResult> selectKbn(String kbnId);
+	public Map<Integer, MKbn> selectKbn(String kbnId);
 }

@@ -3,10 +3,10 @@ package com.example.test.service;
 
 import java.util.Map;
 
-import com.example.test.persistence.entity.ContentResult;
+import com.example.test.persistence.entity.MKbn;
 
 public interface MKbnService {
 
-	public Map<Integer, ContentResult> init(String kbnId);
+	public Map<Integer, MKbn> init(String kbnId);
 
 }
