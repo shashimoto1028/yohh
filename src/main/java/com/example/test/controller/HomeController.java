@@ -58,7 +58,6 @@ public class HomeController {
 		logger.info("category()呼び出し");
 		System.out.println(categoryId);
 
-
 		return "category";
 	}
 }
