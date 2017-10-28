@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.test.persistence.ProdResultMapper">
+	<select id="selectNewProdList" resultType="com.example.test.persistence.entity.ProdResult">
+		SELECT
+		mp.prod_cd
+		,mp.hinban_cd
+		,mp.artist_cd
+		,mp.category_div
+		,mp.prod_name
+		,mp.disp_price
+		,mp.img_path
+		,mp.sales_start_date
+		,mp.sales_end_date
+		,ma.artist_name_kj
+		FROM yohh.M_PRODUCT as mp
+		INNER JOIN yohh.M_ARTIST as ma
+		ON mp.ARTIST_CD = ma.ARTIST_CD
+		WHERE mp.IS_DELETE = 0
+		ORDER BY mp.SALES_START_DATE desc
+		LIMIT 10;
+	</select>
+</mapper>
