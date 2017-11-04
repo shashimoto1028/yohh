@@ -6,6 +6,5 @@ import com.example.test.persistence.entity.ProdResult;
 
 public interface ProdResultMapper {
 
-
 	public List<ProdResult> selectNewProdList();
 }

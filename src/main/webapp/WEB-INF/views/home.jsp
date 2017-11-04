@@ -167,6 +167,31 @@
                 <h3>予約・発売中のおすすめ新作CD</h3>
                 <hr>
                 <table>
+                <tr>
+                		<c:forEach var="obj" items="${newProdList}" varStatus="status">
+						<c:if test="${status.index < 5}">
+							<td class="col-sm-1.8">
+	                            <a href="product.html">
+	                                <img src="${obj.img_path}" class="img-responsive" width="120" height="120" alt="">
+	                            </a>
+	                            <p>${obj.artist_name_kj}<br>${obj.prod_name}</p>
+	                        </td>
+	                     </c:if>
+	                 </c:forEach>
+	            </tr>
+	            <tr>
+		            <c:forEach var="obj" items="${newProdList}" varStatus="status">
+	                     <c:if test="${status.index >= 5}">
+							<td class="col-sm-1.8">
+	                            <a href="product.html">
+	                                <img src="${obj.img_path}" class="img-responsive" width="120" height="120" alt="">
+	                            </a>
+	                            <p>${obj.artist_name_kj}<br>${obj.prod_name}</p>
+	                        </td>
+	                     </c:if>
+	                 </c:forEach>
+	            </tr>
+
                     <tr>
                         <td class="col-sm-1.8">
                             <a href="product.html">

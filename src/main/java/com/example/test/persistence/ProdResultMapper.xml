@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.test.persistence.ProdResultMapper">
-	<select id="selectNewProdList" resultType="com.example.test.persistence.entity.ProdResult">
+	<select id="selectNewProdList" resultMap="prodResultMap">
 		SELECT
 		mp.prod_cd
 		,mp.hinban_cd
@@ -20,4 +20,16 @@
 		ORDER BY mp.SALES_START_DATE desc
 		LIMIT 10;
 	</select>
+	<resultMap id="prodResultMap" type="com.example.test.persistence.entity.ProdResult">
+    <result property="prod_cd" column="PROD_CD" />
+    <result property="hinban_cd" column="HINBAN_CD" />
+    <result property="artist_cd" column="ARTIST_CD" />
+    <result property="category_div" column="CATEGORY_DIV" />
+    <result property="prod_name" column="PROD_NAME" />
+    <result property="disp_price" column="DISP_PRICE" />
+    <result property="img_path" column="IMG_PATH" />
+    <result property="sales_start_date" column="SALES_START_DATE" />
+    <result property="sales_end_date" column="SALES_END_DATE" />
+    <result property="artist_name_kj" column="ARTIST_NAME_KJ" />
+	</resultMap>
 </mapper>

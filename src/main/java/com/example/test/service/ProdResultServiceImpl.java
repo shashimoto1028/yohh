@@ -1,6 +1,5 @@
 package com.example.test.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -23,9 +22,9 @@ public class ProdResultServiceImpl implements ProdResultService{
 	public List<ProdResult> selectNewProd() {
 		// TODO 自動生成されたメソッド・スタブ
 
-		List<ProdResult> result = new ArrayList<>();
-		result = prodResultMapper.selectNewProdList();
-		return result;
+//		List<ProdResult> result = new ArrayList<>();
+//		result = prodResultMapper.selectNewProdList();
+		return prodResultMapper.selectNewProdList();
 	}
 
 }

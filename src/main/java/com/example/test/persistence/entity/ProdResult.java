@@ -23,7 +23,7 @@ public class ProdResult {
 
 	private Date sales_end_date;
 
-	private String artist_nm_kj;
+	private String artist_name_kj;
 
 	public String getProd_cd() {
 		return prod_cd;
@@ -97,12 +97,12 @@ public class ProdResult {
 		this.sales_end_date = sales_end_date;
 	}
 
-	public String getArtist_nm_kj() {
-		return artist_nm_kj;
+	public String getArtist_name_kj() {
+		return artist_name_kj;
 	}
 
-	public void setArtist_nm_kj(String artist_nm_kj) {
-		this.artist_nm_kj = artist_nm_kj;
+	public void setArtist_name_kj(String artist_name_kj) {
+		this.artist_name_kj = artist_name_kj;
 	}
 
 }
