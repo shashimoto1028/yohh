@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.test.persistence.CategoryListMapper">
-	<select id="selectCategoryList" parameterType="int" resultType="com.example.test.persistence.entity.CategoryListResult">
+	<select id="selectCategoryList" parameterType="int" resultMap="CategoryListResultMap">
 		SELECT
-		ARTIST_NAME_KJ
-		,ARTIST_NAME_KN
-		,CATEGORY_DIV
-		,SALES_START_DATE
-		,DISP_PRICE
-		,IMG_PATH
+		M_ARTIST.ARTIST_NAME_KJ
+		,M_ARTIST.ARTIST_NAME_KN
+		,M_PRODUCT.PROD_NAME
+		,M_PRODUCT.CATEGORY_DIV
+		,M_PRODUCT.PROD_NAME
+		,M_PRODUCT.SALES_START_DATE
+		,M_PRODUCT.DISP_PRICE
+		,M_PRODUCT.IMG_PATH
 		FROM
 		(
 			SELECT
 			CATEGORY_DIV
+			,PROD_NAME
 			,ARTIST_CD
 			,SALES_START_DATE
 			,DISP_PRICE
@@ -27,4 +30,12 @@
 		ON
 		M_PRODUCT.ARTIST_CD =M_ARTIST.ARTIST_CD
 	</select>
+	<resultMap id="CategoryListResultMap" type="com.example.test.persistence.entity.CategoryListResult">
+    <result property="categorydiv" column="CATEGORY_DIV" />
+    <result property="dispPrice" column="DISP_PRICE" />
+    <result property="imgPath" column="IMG_PATH" />
+    <result property="salesStartDate" column="SALES_START_DATE" />
+    <result property="artistNameKj" column="ARTIST_NAME_KJ" />
+    <result property="artistNameKn" column="ARTIST_NAME_KN" />
+	</resultMap>
 </mapper>

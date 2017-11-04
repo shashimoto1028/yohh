@@ -1,12 +1,12 @@
 
 package com.example.test.service;
 
-import java.util.Map;
+import java.util.List;
 
 import com.example.test.persistence.entity.CategoryListResult;
 
 public interface CategoryService {
 
-	public Map<Integer, CategoryListResult> init(int CategoryDiv);
+	public List<CategoryListResult> init(int CategoryDiv);
 
 }

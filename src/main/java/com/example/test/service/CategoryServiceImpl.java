@@ -1,7 +1,7 @@
 package com.example.test.service;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,10 +21,9 @@ public class CategoryServiceImpl implements CategoryService {
 	CategoryListMapper categoryListMapper;
 
 	@Override
-	public Map<Integer, CategoryListResult> init(int categoryDiv) {
+	public List<CategoryListResult> init(int categoryDiv) {
 
-		// Mapperアクセス
-		Map<Integer, CategoryListResult> content = new LinkedHashMap<>();
+		List<CategoryListResult> content = new ArrayList<>();
 		content = categoryListMapper.selectCategoryList(categoryDiv);
 
 		return content;

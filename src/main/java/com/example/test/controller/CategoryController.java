@@ -1,8 +1,7 @@
 package com.example.test.controller;
 
+import java.util.List;
 import java.util.Locale;
-import java.util.Map;
-import java.util.Map.Entry;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +31,7 @@ public class CategoryController {
 	CategoryService categoryService;
 
 	//カテゴリのマップ
-	Map<Integer, CategoryListResult> categoryList;
+	List<CategoryListResult> categoryList;
 
 	@ModelAttribute
     public CategoryForm setUpCategoryForm() {
@@ -49,9 +48,14 @@ public class CategoryController {
 
 		categoryList= categoryService.init(categoryDiv);
 
-        for (Entry<Integer, CategoryListResult> entry : categoryList.entrySet()) {
-            System.out.println(entry.getValue().getArtistNameKj());
-        }
+//        for (Entry<Integer, CategoryListResult> entry : categoryList.entrySet()) {
+//            System.out.println(entry.getValue().getArtistNameKj());
+//       }
+
+
+		  for (CategoryListResult str : categoryList) {
+		      System.out.println(str.getArtistNameKj());  // 結果：Windows、Linux、 OS X
+		    }
 
 		model.addAttribute("categoryList", categoryList );
 
