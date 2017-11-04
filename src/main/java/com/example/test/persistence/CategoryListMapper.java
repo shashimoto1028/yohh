@@ -9,5 +9,5 @@ import com.example.test.persistence.entity.CategoryListResult;
 public interface CategoryListMapper {
 
 	@MapKey("categorydiv")
-	public Map<Integer, CategoryListResult> selectList(int CategoryDiv);
+	public Map<Integer, CategoryListResult> selectCategoryList(int CategoryDiv);
 }

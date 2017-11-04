@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.test.persistence.CategoryListMapper">
-	<select id="selectList" parameterType="int" resultType="com.example.test.persistence.entity.CategoryListResult">
+	<select id="selectCategoryList" parameterType="int" resultType="com.example.test.persistence.entity.CategoryListResult">
 		SELECT
 		ARTIST_NAME_KJ
 		,ARTIST_NAME_KN
 		,CATEGORY_DIV
+		,SALES_START_DATE
+		,DISP_PRICE
 		FROM
 		(
 			SELECT
 			CATEGORY_DIV
 			,ARTIST_CD
+			,SALES_START_DATE
+			,DISP_PRICE
 			FROM
 			yohh.M_PRODUCT
 			WHERE

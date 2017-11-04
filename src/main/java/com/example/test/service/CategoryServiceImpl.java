@@ -25,7 +25,7 @@ public class CategoryServiceImpl implements CategoryService {
 
 		// Mapperアクセス
 		Map<Integer, CategoryListResult> content = new LinkedHashMap<>();
-		content = categoryListMapper.selectList(categoryDiv);
+		content = categoryListMapper.selectCategoryList(categoryDiv);
 
 		return content;
 
