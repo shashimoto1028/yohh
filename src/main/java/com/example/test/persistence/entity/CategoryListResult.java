@@ -10,8 +10,15 @@ public class CategoryListResult {
 	private String artistNameKn;
 	private Date salesStartDate;
 	private BigDecimal dispPrice;
+	private String imgPath;
 
 
+	public String getImgPath() {
+		return imgPath;
+	}
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
+	}
 	public int getCategorydiv() {
 		return categorydiv;
 	}

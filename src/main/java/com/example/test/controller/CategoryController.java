@@ -2,6 +2,7 @@ package com.example.test.controller;
 
 import java.util.Locale;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,8 +49,14 @@ public class CategoryController {
 
 		categoryList= categoryService.init(categoryDiv);
 
+        for (Entry<Integer, CategoryListResult> entry : categoryList.entrySet()) {
+            System.out.println(entry.getValue().getArtistNameKj());
+        }
 
 		model.addAttribute("categoryList", categoryList );
+
+
+
 
 		return "category";
 	}
