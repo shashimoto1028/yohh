@@ -80,27 +80,27 @@
                 </ul>
             </div>
             <div class="col-sm-9">
+                            	<c:forEach var="category" items="${categoryList}">
                 <div class="table-responsive">
                     <table>
                         <tr>
                             <td class="col-sm-7">
                                 <div class="discographyTableImg01">
                                     <p>
-                                        <a href="product.html"><img src="../images/F56539E0.jpg" class="img-responsive" width="120" height="120" alt=""></a>
+                                        <a href="product.html"><img src="${category.imgPath}" class="img-responsive" width="120" height="120" alt=""></a>
                                     </p>
                                 </div>
                                 <div class="discographyTable01In">
-                                    <p><a href="product.html">ONE-花の唄-六等星の夜-Magic-Blue-ver</a></p>
-                                    <p><a href="product.html">Aimer</a></p>
-                                    <p>発売日:2017年10月11日
-                                        <br>規格品番:SECL-2209
+                                    <p><a href="product.html"><c:out value="${category.prodName}"/></a></p>
+                                    <p><a href="product.html"><c:out value="${category.artistNameKj}"/></a></p>
+                                    <p>発売日:<c:out value="${category.salesStartDate}"/>
                                         <br>レーベル:SME Records
                                         <br>メディア詳細：CD
                                     </p>
                                 </div>
                             </td>
                             <td class="col-sm-2" valign="top">
-                                <p class="bbbb">価格：1000円</p>
+                                <p class="bbbb">価格：<c:out value="${category.dispPrice}"/>円</p>
                                 <p class="aaaa">
                                     <a href="cart.html"><img src="../images/bt_03_s2_on.png" class="img-responsive" width="120" height="120" alt=""></a>
                                 </p>
@@ -109,151 +109,7 @@
                     </table>
                 </div>
                 <hr>
-                <div class="table-responsive">
-                    <table>
-                        <tr>
-                            <td class="col-sm-7">
-                                <div class="discographyTableImg01">
-                                    <p>
-                                        <a href="product.html"><img src="../images/F56539E0.jpg" class="img-responsive" width="120" height="120" alt=""></a>
-                                    </p>
-                                </div>
-                                <div class="discographyTable01In">
-                                    <p><a href="product.html">ONE-花の唄-六等星の夜-Magic-Blue-ver</a></p>
-                                    <p><a href="product.html">Aimer</a></p>
-                                    <p>発売日:2017年10月11日
-                                        <br>規格品番:SECL-2209
-                                        <br>レーベル:SME Records
-                                        <br>メディア詳細：CD
-                                    </p>
-                                </div>
-                            </td>
-                            <td class="col-sm-2" valign="top">
-                                <p class="bbbb">価格：1000円</p>
-                                <p class="aaaa">
-                                    <a><img src="../images/bt_03_s2_on.png" class="img-responsive" width="120" height="120" alt=""></a>
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <hr>
-                <div class="table-responsive">
-                    <table>
-                        <tr>
-                            <td class="col-sm-7">
-                                <div class="discographyTableImg01">
-                                    <p>
-                                        <a href="product.html"><img src="../images/F56539E0.jpg" class="img-responsive" width="120" height="120" alt=""></a>
-                                    </p>
-                                </div>
-                                <div class="discographyTable01In">
-                                    <p><a href="product.html">ONE-花の唄-六等星の夜-Magic-Blue-ver</a></p>
-                                    <p><a href="product.html">Aimer</a></p>
-                                    <p>発売日:2017年10月11日
-                                        <br>規格品番:SECL-2209
-                                        <br>レーベル:SME Records
-                                        <br>メディア詳細：CD
-                                    </p>
-                                </div>
-                            </td>
-                            <td class="col-sm-2" valign="top">
-                                <p class="bbbb">価格：1000円</p>
-                                <p class="aaaa">
-                                    <a href="product.html"><img src="../images/bt_03_s2_on.png" class="img-responsive" width="120" height="120" alt=""></a>
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <hr>
-                <div class="table-responsive">
-                    <table>
-                        <tr>
-                            <td class="col-sm-7">
-                                <div class="discographyTableImg01">
-                                    <p>
-                                        <a href="product.html"><img src="../images/F56539E0.jpg" class="img-responsive" width="120" height="120" alt=""></a>
-                                    </p>
-                                </div>
-                                <div class="discographyTable01In">
-                                    <p><a href="product.html">ONE-花の唄-六等星の夜-Magic-Blue-ver</a></p>
-                                    <p><a href="product.html">Aimer</a></p>
-                                    <p>発売日:2017年10月11日
-                                        <br>規格品番:SECL-2209
-                                        <br>レーベル:SME Records
-                                        <br>メディア詳細：CD
-                                    </p>
-                                </div>
-                            </td>
-                            <td class="col-sm-2" valign="top">
-                                <p class="bbbb">価格：1000円</p>
-                                <p class="aaaa">
-                                    <a><img src="../images/bt_03_s2_on.png" class="img-responsive" width="120" height="120" alt=""></a>
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <hr>
-                <div class="table-responsive">
-                    <table>
-                        <tr>
-                            <td class="col-sm-7">
-                                <div class="discographyTableImg01">
-                                    <p>
-                                        <a><img src="../images/F56539E0.jpg" class="img-responsive" width="120" height="120" alt=""></a>
-                                    </p>
-                                </div>
-                                <div class="discographyTable01In">
-                                    <p><a href="product.html">ONE-花の唄-六等星の夜-Magic-Blue-ver</a></p>
-                                    <p><a href="product.html">Aimer</a></p>
-                                    <p>発売日:2017年10月11日
-                                        <br>規格品番:SECL-2209
-                                        <br>レーベル:SME Records
-                                        <br>メディア詳細：CD
-                                    </p>
-                                </div>
-                            </td>
-                            <td class="col-sm-2" valign="top">
-                                <p class="bbbb">価格：1000円</p>
-                                <p class="aaaa">
-                                    <a><img src="../images/bt_03_s2_on.png" class="img-responsive" width="120" height="120" alt=""></a>
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <hr>
-                <div class="table-responsive">
-                    <table>
-                        <tr>
-                            <td class="col-sm-7">
-                                <div class="discographyTableImg01">
-                                    <p>
-                                        <a href="product.html"><img src="../images/F56539E0.jpg" class="img-responsive" width="120" height="120" alt=""></a>
-                                    </p>
-                                </div>
-                                <div class="discographyTable01In">
-                                    <p><a href="product.html">ONE-花の唄-六等星の夜-Magic-Blue-ver</a></p>
-                                    <p><a href="product.html">Aimer</a></p>
-                                    <p>発売日:2017年10月11日
-                                        <br>規格品番:SECL-2209
-                                        <br>レーベル:SME Records
-                                        <br>メディア詳細：CD
-                                    </p>
-                                </div>
-                            </td>
-                            <td class="col-sm-2" valign="top">
-                                <p class="bbbb">価格：1000円</p>
-                                <p class="aaaa">
-                                        <a href="product.html"><img src="../images/bt_03_s2_on.png" class="img-responsive" width="120" height="120" alt=""></a>
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <hr>
+				</c:forEach>
                 <div class="text-center">
                     <ul class="pagination">
                         <li class="disabled">
