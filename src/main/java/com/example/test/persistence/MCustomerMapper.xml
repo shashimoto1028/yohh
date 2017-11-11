@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.test.persistence.MCustomerMapper">
+	<select id="selectCustomer" parameterType="com.example.test.controller.form.LoginForm"
+		resultMap="resultCustomerMap">
+		SELECT
+		customer_no,
+		customer_name_kj,
+		customer_name_kn,
+		zip_cd,
+		address,
+		tel_no,
+		mail_address,
+		password,
+		customer_rank
+		FROM yohh.M_CUSTOMER WHERE MAIL_ADDRESS=#{mail}
+		AND
+		PASSWORD=#{password}
+		AND IS_DELETE=0
+	</select>
+	<resultMap id="resultCustomerMap" type="com.example.test.persistence.entity.MCustomer">
+    <result property="customer_no" column="CUSTOMER_NO" />
+    <result property="customer_name_kj" column="CUSTOMER_NAME_KJ" />
+    <result property="customer_name_kn" column="CUSTOMER_NAME_KN" />
+    <result property="zip_cd" column="ZIP_CD" />
+    <result property="address" column="ADDRESS" />
+    <result property="tel_no" column="TEL_NO" />
+    <result property="mail_address" column="MAIL_ADDRESS" />
+    <result property="password" column="PASSWORD" />
+    <result property="customer_rank" column="CUSTOMER_RANK" />
+	</resultMap>
+</mapper>

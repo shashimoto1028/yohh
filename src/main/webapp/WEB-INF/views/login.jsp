@@ -37,6 +37,9 @@
                 <form:input type="text" path="password" class="form-control"/>
                 <form:errors path="password" cssStyle="color:red" />
             </div>
+            <c:if test="${message != ''}" var="flg">
+            		<p style="color:red">${message}</p>
+            </c:if>
 			<button type="submit">ログイン</button>
 			<a href="resister.jsp">&nbsp;新規会員登録はこちら</a>
         </form:form>

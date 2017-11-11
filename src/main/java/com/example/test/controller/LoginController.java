@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,11 +15,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.test.controller.form.LoginForm;
+import com.example.test.persistence.entity.MCustomer;
+import com.example.test.service.MCustomerService;
 
 @Controller
 public class LoginController {
 
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+
+	@Autowired
+	MCustomerService mCutomerService;
 
 	@ModelAttribute
     public LoginForm setUpLoginForm() {
@@ -38,20 +44,33 @@ public class LoginController {
 
 		logger.info("Welcome loginCheck! The client locale is {}.", locale);
 
-		System.out.println(form.getMail());
-		System.out.println(form.getPassword());
-
 		if (result.hasErrors()) { // (2)
             return "login";
         }
-//		// カテゴリを取得
-//		categoryMap= mKbnService.init("PROD_CATEGORY");
-//
-//		// 新商品の取得
-//		newProdList = prodResultService.selectNewProd();
+
+		//検索
+		MCustomer customer = mCutomerService.serchCustomer(form);
+		String  message = "";
+
+
+//		System.out.println(customer.getCustomer_no());
+//		System.out.println(customer.getCustomer_name_kj());
+//		System.out.println(customer.getCustomer_name_kn());
+//		System.out.println(customer.getZip_cd());
+//		System.out.println(customer.getAddress());
+//		System.out.println(customer.getTel_no());
+//		System.out.println(customer.getMail_address());
+//		System.out.println(customer.getPassword());
+//		System.out.println(customer.getCustomer_rank());
+
+		if (null == customer) {
+			message = "アカウントが存在しません。";
+			model.addAttribute("message", message);
+			return "login";
+		}
 //
 //		model.addAttribute("categoryMap", categoryMap );
-//		model.addAttribute("newProdList", newProdList );
+		model.addAttribute("customer", customer );
 
 		return "redirect:/";
 	}
