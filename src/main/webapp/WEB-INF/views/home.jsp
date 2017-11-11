@@ -170,7 +170,7 @@
                 <tr>
                 		<c:forEach var="obj" items="${newProdList}" varStatus="status">
 						<c:if test="${status.index < 5}">
-							<td class="col-sm-1.8">
+							<td class="col-sm-1.8" width="167px">
 	                            <a href="product.html">
 	                                <img src="${obj.img_path}" class="img-responsive" width="120" height="120" alt="">
 	                            </a>
@@ -182,7 +182,7 @@
 	            <tr>
 		            <c:forEach var="obj" items="${newProdList}" varStatus="status">
 	                     <c:if test="${status.index >= 5}">
-							<td class="col-sm-1.8">
+							<td class="col-sm-1.8" width="167px">
 	                            <a href="product.html">
 	                                <img src="${obj.img_path}" class="img-responsive" width="120" height="120" alt="">
 	                            </a>
