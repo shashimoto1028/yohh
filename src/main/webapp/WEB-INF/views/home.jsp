@@ -44,7 +44,7 @@
                                 </ul>
                                 <ul id="headerLink02">
                                     <li id="resister"><a href="resister.jsp"><span style="text-decoration: underline">新規登録</span></a></li>
-                                    <li id="login"><a href="login.jsp"><span style="text-decoration: underline">ログイン</span></a></li>
+                                    <li id="login"><a href="${pageContext.request.contextPath}/login"><span style="text-decoration: underline">ログイン</span></a></li>
                                     <li id="cart"><span style="text-decoration: underline"><a href="cart.html">カート</span></a></li>
                                     <li id="mypage"></a></li>
                                     <div class="dropdown">

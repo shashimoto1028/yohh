@@ -25,23 +25,23 @@
     <div class="container">
         <h1>Login</h1>
         <hr>
-        <form>
+        <form:form modelAttribute="loginForm" action="${pageContext.request.contextPath}/check" method="POST">
             <div class="form-group">
-                <label>name</label>
-                <input type="text" name="email" class="form-control">
+                <label name="mail">mail</label>
+                <form:input path="mail" class="form-control"/>
+    				<form:errors path="mail" cssStyle="color:red" />
+                <!--<form:input path="mail" class="form-control"/>-->
             </div>
             <div class="form-group">
-                <label>password</label>
-                <input type="text" name="password" class="form-control">
+                <label name="password">password</label>
+                <form:input type="text" path="password" class="form-control"/>
+                <form:errors path="password" cssStyle="color:red" />
             </div>
-            <div class="checkbox">
-                <label>
-                         <input type="checkbox">remember
-                </label>
-            </div>
-        </form>
-                <a href="home.jsp"><button type="submit">ログイン</button></a>
-                <a href="resister.jsp">&nbsp;新規会員登録はこちら</a>
+			<button type="submit">ログイン</button>
+			<a href="resister.jsp">&nbsp;新規会員登録はこちら</a>
+        </form:form>
+
+
         <div class="col-xs-12"></div>
         <hr>
         <div class="center-block">

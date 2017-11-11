@@ -2,22 +2,23 @@ package com.example.test.controller.form;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.NotEmpty;
+
 
 public class LoginForm implements Serializable {
 
-	@NotNull
-	private String e_mail;
+	@NotEmpty(message = "メールアドレスを入力してください")
+	private String mail;
 
-	@NotNull
+	@NotEmpty(message = "パスワードを入力してください")
 	private String password;
 
-	public String getE_mail() {
-		return e_mail;
+	public String getMail() {
+		return mail;
 	}
 
-	public void setE_mail(String e_mail) {
-		this.e_mail = e_mail;
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 
 	public String getPassword() {
