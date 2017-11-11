@@ -2,6 +2,7 @@ package com.example.test.controller;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.test.controller.form.CategoryForm;
 import com.example.test.persistence.entity.CategoryListResult;
+import com.example.test.persistence.entity.MKbn;
 import com.example.test.service.CategoryService;
+import com.example.test.service.MKbnService;
 
 
 /**
@@ -28,9 +31,15 @@ public class CategoryController {
 
 	// 追加
 	@Autowired
+	MKbnService mKbnService;
+
+	@Autowired
 	CategoryService categoryService;
 
 	//カテゴリのマップ
+	Map<Integer, MKbn> categoryMap;
+
+	//カテゴリリスト「
 	List<CategoryListResult> categoryList;
 
 	@ModelAttribute
@@ -43,24 +52,20 @@ public class CategoryController {
 	public String category(@RequestParam(value="category_id",required = false) int categoryDiv,Locale locale, Model model) {
 
 		logger.info("category()呼び出し");
-		System.out.println("橋本");
 		System.out.println(categoryDiv);
 
+		// カテゴリを取得
+		categoryMap= mKbnService.init("PROD_CATEGORY");
+
+		// カテゴリリストの取得
 		categoryList= categoryService.init(categoryDiv);
 
-//        for (Entry<Integer, CategoryListResult> entry : categoryList.entrySet()) {
-//            System.out.println(entry.getValue().getArtistNameKj());
-//       }
+//		  for (CategoryListResult str : categoryList) {
+//		      System.out.println(str.getArtistNameKj());  // 結果：Windows、Linux、 OS X
+//		    }
 
-
-		  for (CategoryListResult str : categoryList) {
-		      System.out.println(str.getArtistNameKj());  // 結果：Windows、Linux、 OS X
-		    }
-
+		model.addAttribute("categoryMap", categoryMap );
 		model.addAttribute("categoryList", categoryList );
-
-
-
 
 		return "category";
 	}

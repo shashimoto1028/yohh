@@ -20,7 +20,6 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </head>
-
 <body>
     <div class="container">
         <header id="header" style="width:100%">
@@ -69,14 +68,9 @@
             <div class="row body_size">
             <div class="col-sm-3">
                 <ul class="list-group">
-                    <a href="category.html" class="list-group-item list-group-item-action">J-POP</a>
-                    <a href="category.html" class="list-group-item list-group-item-action">K-POP</a>
-                    <a href="category.html" class="list-group-item list-group-item-action">洋楽</a>
-                    <a href="category.html" class="list-group-item list-group-item-action">JAZZ</a>
-                    <a href="category.html" class="list-group-item list-group-item-action">演歌</a>
-                    <a href="category.html" class="list-group-item list-group-item-action">アニメ</a>
-                    <a href="category.html" class="list-group-item list-group-item-action">クラシック</a>
-                    <a href="category.html" class="list-group-item list-group-item-action">その他</a>
+				<c:forEach var="map" items="${categoryMap}">
+					 <a href="${pageContext.request.contextPath}/category?category_id=${map.key}" class="list-group-item list-group-item-action"><c:out value="${map.value.value}"/><br></a>
+				</c:forEach>
                 </ul>
             </div>
             <div class="col-sm-9">
@@ -94,15 +88,13 @@
                                     <p><a href="product.html"><c:out value="${category.prodName}"/></a></p>
                                     <p><a href="product.html"><c:out value="${category.artistNameKj}"/></a></p>
                                     <p>発売日:<c:out value="${category.salesStartDate}"/>
-                                        <br>レーベル:SME Records
-                                        <br>メディア詳細：CD
                                     </p>
                                 </div>
                             </td>
                             <td class="col-sm-2" valign="top">
                                 <p class="bbbb">価格：<c:out value="${category.dispPrice}"/>円</p>
                                 <p class="aaaa">
-                                    <a href="cart.html"><img src="../images/bt_03_s2_on.png" class="img-responsive" width="120" height="120" alt=""></a>
+                                    <a href="cart.html"><img src="resources/images/bt_03_s2_on.png" class="img-responsive" width="120" height="120" alt=""></a>
                                 </p>
                             </td>
                         </tr>
