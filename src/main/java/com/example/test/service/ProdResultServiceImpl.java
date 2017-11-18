@@ -13,7 +13,7 @@ import com.example.test.persistence.entity.ProdResult;
 @Service
 public class ProdResultServiceImpl implements ProdResultService{
 
-	private static final Logger logger = LoggerFactory.getLogger(MKbnServiceImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(ProdResultServiceImpl.class);
 
 	@Autowired
 	ProdResultMapper prodResultMapper;

@@ -2,6 +2,7 @@ package com.example.test.controller;
 
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -25,6 +26,9 @@ public class LoginController {
 
 	@Autowired
 	MCustomerService mCutomerService;
+
+	@Autowired
+	HttpSession session;
 
 	@ModelAttribute
     public LoginForm setUpLoginForm() {
@@ -53,24 +57,24 @@ public class LoginController {
 		String  message = "";
 
 
-//		System.out.println(customer.getCustomer_no());
-//		System.out.println(customer.getCustomer_name_kj());
-//		System.out.println(customer.getCustomer_name_kn());
-//		System.out.println(customer.getZip_cd());
-//		System.out.println(customer.getAddress());
-//		System.out.println(customer.getTel_no());
-//		System.out.println(customer.getMail_address());
-//		System.out.println(customer.getPassword());
-//		System.out.println(customer.getCustomer_rank());
+		System.out.println(customer.getCustomer_no());
+		System.out.println(customer.getCustomer_name_kj());
+		System.out.println(customer.getCustomer_name_kn());
+		System.out.println(customer.getZip_cd());
+		System.out.println(customer.getAddress());
+		System.out.println(customer.getTel_no());
+		System.out.println(customer.getMail_address());
+		System.out.println(customer.getPassword());
+		System.out.println(customer.getCustomer_rank());
 
 		if (null == customer) {
 			message = "アカウントが存在しません。";
 			model.addAttribute("message", message);
 			return "login";
 		}
-//
-//		model.addAttribute("categoryMap", categoryMap );
-		model.addAttribute("customer", customer );
+
+		// セッションへ保存
+		session.setAttribute("customer", customer);
 
 		return "redirect:/";
 	}

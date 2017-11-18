@@ -1,6 +1,8 @@
 package com.example.test.persistence.entity;
 
-public class MCustomer {
+import java.io.Serializable;
+
+public class MCustomer implements Serializable{
 
 	private int customer_no;
 

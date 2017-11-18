@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.example.test.persistence.entity.MCustomer;
 import com.example.test.persistence.entity.MKbn;
 import com.example.test.persistence.entity.ProdResult;
 import com.example.test.service.MKbnService;
@@ -33,6 +36,9 @@ public class HomeController {
 	@Autowired
 	ProdResultService prodResultService;
 
+	@Autowired
+	HttpSession session;
+
 	//カテゴリのマップ
 	Map<Integer, MKbn> categoryMap;
 
@@ -50,18 +56,13 @@ public class HomeController {
 		// 新商品の取得
 		newProdList = prodResultService.selectNewProd();
 
+		MCustomer customer = (MCustomer) session.getAttribute("customer");
+
+		if(customer != null) model.addAttribute("customer",customer);
 		model.addAttribute("categoryMap", categoryMap );
 		model.addAttribute("newProdList", newProdList );
 
 		return "home";
 	}
-//CategoryListHomecontroller作成のため コメントアウト 11/4 hashimoto
-//	@RequestMapping(value = "/category", method = RequestMethod.GET)
-//	public String category(@RequestParam(value="category_id",required = false) String categoryId,Locale locale, Model model) {
-//
-//		logger.info("category()呼び出し");
-//		System.out.println(categoryId);
-//
-//		return "category";
-//	}
+
 }

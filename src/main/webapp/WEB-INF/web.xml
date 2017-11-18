@@ -51,4 +51,7 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     <!-- add マルチバイト対応 ここまで -->
+    <session-config>
+    <session-timeout>3</session-timeout>
+  </session-config>
 </web-app>
