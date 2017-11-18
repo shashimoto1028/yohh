@@ -36,7 +36,10 @@
                                     		<c:if test="${not empty customer.customer_name_kj}">
                                     			<p id="guest01" class="wb">こんにちは<span>${customer.customer_name_kj}様</span></p>
                                     		</c:if>
-                                        <p id="guest01" class="wb">こんにちは<span>ゲスト様</span></p>
+                                    		<c:if test="${empty customer.customer_name_kj}">
+                                    			<p id="guest01" class="wb">こんにちは<span>ゲスト様</span></p>
+                                    		</c:if>
+
                                     </div>
                                 </div>
                             </div>
