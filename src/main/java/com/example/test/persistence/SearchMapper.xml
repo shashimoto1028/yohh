@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.test.persistence.SearchMapper">
+	<select id="selectSearchList" parameterType="com.example.test.controller.form.SearchForm" resultMap="SearchListResultMap">
+		SELECT
+		M_ARTIST.ARTIST_NAME_KJ
+		,M_ARTIST.ARTIST_NAME_KN
+		,M_PRODUCT.PROD_NAME
+		,M_PRODUCT.CATEGORY_DIV
+		,M_PRODUCT.SALES_START_DATE
+		,M_PRODUCT.DISP_PRICE
+		,M_PRODUCT.IMG_PATH
+		FROM
+		yohh.M_PRODUCT
+		INNER JOIN
+		yohh.M_ARTIST
+		ON
+		M_PRODUCT.ARTIST_CD =M_ARTIST.ARTIST_CD
+		WHERE
+		(
+			M_ARTIST.ARTIST_NAME_KJ LIKE '%#{search}%'
+
+			OR
+			M_ARTIST.ARTIST_NAME_KN LIKE '%#{search}%'
+			OR
+			PROD_NAME LIKE '%#{search}%'
+		)
+
+	</select>
+	<resultMap id="SearchListResultMap" type="com.example.test.persistence.entity.CategoryListResult">
+    <result property="categorydiv" column="CATEGORY_DIV" />
+    <result property="dispPrice" column="DISP_PRICE" />
+    <result property="imgPath" column="IMG_PATH" />
+    <result property="salesStartDate" column="SALES_START_DATE" />
+    <result property="artistNameKj" column="ARTIST_NAME_KJ" />
+    <result property="artistNameKn" column="ARTIST_NAME_KN" />
+	</resultMap>
+</mapper>

@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.test.controller.form.CategoryForm;
+import com.example.test.controller.form.SearchForm;
 import com.example.test.persistence.entity.CategoryListResult;
 import com.example.test.persistence.entity.MKbn;
 import com.example.test.service.CategoryService;
 import com.example.test.service.MKbnService;
+import com.example.test.service.SearchService;
 
 
 /**
@@ -36,6 +38,9 @@ public class CategoryController {
 	@Autowired
 	CategoryService categoryService;
 
+	@Autowired
+	SearchService searchService;
+
 	//カテゴリのマップ
 	Map<Integer, MKbn> categoryMap;
 
@@ -46,6 +51,11 @@ public class CategoryController {
     public CategoryForm setUpCategoryForm() {
 
         return new CategoryForm();
+    }
+	@ModelAttribute
+    public SearchForm setUpSerachForm() {
+
+        return new SearchForm();
     }
 
 	@RequestMapping(value = "/category", method = RequestMethod.GET)
@@ -60,6 +70,7 @@ public class CategoryController {
 		// カテゴリリストの取得
 		categoryList= categoryService.init(categoryDiv);
 
+
 //		  for (CategoryListResult str : categoryList) {
 //		      System.out.println(str.getArtistNameKj());  // 結果：Windows、Linux、 OS X
 //		    }
@@ -69,4 +80,18 @@ public class CategoryController {
 
 		return "category";
 	}
+
+	//検索ボタン押下時の処理
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public String search(SearchForm searchForm,Model model) {
+		categoryList = searchService.init(searchForm);
+		model.addAttribute("categoryList", categoryList );
+		System.out.println("1111");
+		System.out.println();
+
+
+		return "category";
+	}
+
+
 }

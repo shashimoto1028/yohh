@@ -30,7 +30,7 @@
                             <div id="headerInfo">
                                 <p id="headerTxt01">幅広いジャンルの音楽をお届けするCD通販サイト</p>
                                 <div id="headerInfoIn">
-                                    <a href="index.html"><p id="headerLogo">MOCK</p></a>
+                                    <a href="${pageContext.request.contextPath}/"><p id="headerLogo">MOCK</p></a>
                                     <div id="headerFortune">
                                         <p id="guest01" class="wb">こんにちは<span>ゲスト様</span></p>
                                     </div>
@@ -54,17 +54,16 @@
                                     </ul>
                                 </div>
                             </ul>
-                            <form method="get" action="#" class="">
+							 <form:form modelAttribute="searchForm" action="${pageContext.request.contextPath}/search" method="GET" class="">
                                 <div class="search">
-                                    <input style="width:90px;" type="text" class="textbox se" placeholder="キーワード">
-                                    <button type="button" class="btn btn-primary btn-xs">検索</button>
+                                    <form:input path="search" style="width:90px;" type="text" class="textbox se" placeholder="キーワード"/>
+                                    <button type="submit" class="btn btn-primary btn-xs">検索</button>
                                 </div>
-                            </form>
+                            </form:form>
                         </div>
                     </div>
                 </div>
             </header>
-
             <div class="row body_size">
             <div class="col-sm-3">
                 <ul class="list-group">
