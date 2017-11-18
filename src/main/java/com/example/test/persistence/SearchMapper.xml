@@ -18,12 +18,12 @@
 		M_PRODUCT.ARTIST_CD =M_ARTIST.ARTIST_CD
 		WHERE
 		(
-			M_ARTIST.ARTIST_NAME_KJ LIKE '%#{search}%'
+			M_ARTIST.ARTIST_NAME_KJ LIKE '%${search}%'
 
 			OR
-			M_ARTIST.ARTIST_NAME_KN LIKE '%#{search}%'
+			M_ARTIST.ARTIST_NAME_KN LIKE '%${search}%'
 			OR
-			PROD_NAME LIKE '%#{search}%'
+			PROD_NAME LIKE '%${search}%'
 		)
 
 	</select>
