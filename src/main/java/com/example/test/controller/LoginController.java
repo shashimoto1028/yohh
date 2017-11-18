@@ -56,17 +56,6 @@ public class LoginController {
 		MCustomer customer = mCutomerService.serchCustomer(form);
 		String  message = "";
 
-
-		System.out.println(customer.getCustomer_no());
-		System.out.println(customer.getCustomer_name_kj());
-		System.out.println(customer.getCustomer_name_kn());
-		System.out.println(customer.getZip_cd());
-		System.out.println(customer.getAddress());
-		System.out.println(customer.getTel_no());
-		System.out.println(customer.getMail_address());
-		System.out.println(customer.getPassword());
-		System.out.println(customer.getCustomer_rank());
-
 		if (null == customer) {
 			message = "アカウントが存在しません。";
 			model.addAttribute("message", message);
