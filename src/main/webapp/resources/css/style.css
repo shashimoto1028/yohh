@@ -78,7 +78,7 @@ category.htmlで使用
 .bbbb {
     margin: 0px 0px 0px 0px;
     padding: 10px 0px 0px 25px;
-    
+
 }
 
 /*
@@ -95,7 +95,7 @@ rireki.htmlで使用
 }
 
 .left-none{
-    border-left-style:none; 
+    border-left-style:none;
 }
 .right-none{
     border-right-style: none;
@@ -103,12 +103,12 @@ rireki.htmlで使用
 }
 .float-left{
     float: left;
-    padding-right: 3px; 
+    padding-right: 3px;
     margin-right: 3px;
 }
 
 .img-margin{
-    padding-right: 3px; 
+    padding-right: 3px;
     margin-right: 3px;
     text-align: center;
 }

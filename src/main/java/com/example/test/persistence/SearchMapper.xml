@@ -10,12 +10,17 @@
 		,M_PRODUCT.SALES_START_DATE
 		,M_PRODUCT.DISP_PRICE
 		,M_PRODUCT.IMG_PATH
+		,T_SATOCK.STOCK
 		FROM
 		yohh.M_PRODUCT
 		INNER JOIN
 		yohh.M_ARTIST
 		ON
 		M_PRODUCT.ARTIST_CD =M_ARTIST.ARTIST_CD
+		INNER JOIN
+		yohh.T_STOCK
+		ON
+		M_PRODUCT.PROD_CD = T_STOCK.PROD_CD
 		WHERE
 		(
 			M_ARTIST.ARTIST_NAME_KJ LIKE '%${search}%'
@@ -25,7 +30,6 @@
 			OR
 			PROD_NAME LIKE '%${search}%'
 		)
-
 	</select>
 	<resultMap id="SearchListResultMap" type="com.example.test.persistence.entity.CategoryListResult">
     <result property="categorydiv" column="CATEGORY_DIV" />
@@ -34,5 +38,6 @@
     <result property="salesStartDate" column="SALES_START_DATE" />
     <result property="artistNameKj" column="ARTIST_NAME_KJ" />
     <result property="artistNameKn" column="ARTIST_NAME_KN" />
+	<result property="stock" column="STOCK" />
 	</resultMap>
 </mapper>

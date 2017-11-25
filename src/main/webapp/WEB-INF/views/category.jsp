@@ -17,7 +17,6 @@
     <!-- jQuery読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- BootstrapのJS読み込み -->
-    <script src="../js/bootstrap.min.js"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </head>
 <body>
@@ -93,7 +92,13 @@
                             <td class="col-sm-2" valign="top">
                                 <p class="bbbb">価格：<c:out value="${category.dispPrice}"/>円</p>
                                 <p class="aaaa">
+	                                <c:if test="${category.stock > 0}">
                                     <a href="cart.html"><img src="resources/images/bt_03_s2_on.png" class="img-responsive" width="120" height="120" alt=""></a>
+                                    </c:if>
+                                    <c:if test="${category.stock == 0}">
+                                    <p style="color:red">在庫がありません。</p>
+                                    <img src="resources/images/bt_03_s2_on.png" class="img-responsive imgcart" id="imgcart" width="120" height="120" alt="" disabled">
+                                    </c:if>
                                 </p>
                             </td>
                         </tr>

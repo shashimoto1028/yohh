@@ -70,7 +70,6 @@ public class CategoryController {
 		// カテゴリリストの取得
 		categoryList= categoryService.init(categoryDiv);
 
-
 //		  for (CategoryListResult str : categoryList) {
 //		      System.out.println(str.getArtistNameKj());  // 結果：Windows、Linux、 OS X
 //		    }
@@ -85,10 +84,8 @@ public class CategoryController {
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(SearchForm searchForm,Model model) {
 		categoryList = searchService.init(searchForm);
-		model.addAttribute("categoryList", categoryList );
-		System.out.println("1111");
-		System.out.println();
 
+		model.addAttribute("categoryList", categoryList );
 
 		return "category";
 	}

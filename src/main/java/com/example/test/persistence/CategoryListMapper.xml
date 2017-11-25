@@ -11,10 +11,12 @@
 		,M_PRODUCT.SALES_START_DATE
 		,M_PRODUCT.DISP_PRICE
 		,M_PRODUCT.IMG_PATH
+		,T_STOCK.STOCK
 		FROM
 		(
 			SELECT
 			CATEGORY_DIV
+			,PROD_CD
 			,PROD_NAME
 			,ARTIST_CD
 			,SALES_START_DATE
@@ -29,6 +31,10 @@
 		yohh.M_ARTIST
 		ON
 		M_PRODUCT.ARTIST_CD =M_ARTIST.ARTIST_CD
+		INNER JOIN
+		yohh.T_STOCK
+		ON
+		M_PRODUCT.PROD_CD = T_STOCK.PROD_CD
 	</select>
 	<resultMap id="CategoryListResultMap" type="com.example.test.persistence.entity.CategoryListResult">
     <result property="categorydiv" column="CATEGORY_DIV" />
@@ -37,5 +43,6 @@
     <result property="salesStartDate" column="SALES_START_DATE" />
     <result property="artistNameKj" column="ARTIST_NAME_KJ" />
     <result property="artistNameKn" column="ARTIST_NAME_KN" />
+    <result property="stock" column="STOCK" />
 	</resultMap>
 </mapper>
