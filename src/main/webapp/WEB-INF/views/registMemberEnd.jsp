@@ -23,11 +23,9 @@
 <body>
     <div class="container">
         <h3>会員登録が完了しました。</h3>
-        <a href="/Test">
+        <a href="${pageContext.request.contextPath}/">
             <span style="text-decoration: underline">トップページへ戻る</span>
         </a>
-        <br />あなたのcontext.request.contextPathは
-        ${pageContext.request.contextPath}
     </div>
 </body>
 </html>
