@@ -50,7 +50,7 @@
 		,M_PRODUCT.PROD_NAME
 		,M_PRODUCT.CATEGORY_DIV
 		,M_PRODUCT.PROD_NAME
-		,M_PRODUCT.SALES_START_DATE
+		,DATE_FORMAT(SALES_START_DATE,'%Y年%m月%d日') AS SALES_START_DATE
 		,M_PRODUCT.DISP_PRICE
 		,M_PRODUCT.IMG_PATH
 		,T_STOCK.STOCK
@@ -95,6 +95,7 @@
 		,M_ARTIST.ARTIST_NAME_KN
 		,M_PRODUCT.PROD_NAME
 		,M_PRODUCT.CATEGORY_DIV
+		,DATE_FORMAT(SALES_START_DATE,'%Y年%m月%d日') AS SALES_START_DATE
 		,M_PRODUCT.SALES_START_DATE
 		,M_PRODUCT.DISP_PRICE
 		,M_PRODUCT.IMG_PATH
@@ -133,6 +134,6 @@
 		<result property="artist_name_kn" column="ARTIST_NAME_KN" />
 		<result property="stock" column="STOCK" />
 		<result property="provision" column="PROVISION" />
-		<result property="prod_Count" column="PROD_COUNT" />
+		<result property="prodCount" column="PROD_COUNT" />
 	</resultMap>
 </mapper>
