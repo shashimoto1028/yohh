@@ -38,7 +38,7 @@
 		INNER JOIN yohh.M_ARTIST as ma
 		ON mp.ARTIST_CD = ma.ARTIST_CD
 		INNER JOIN yohh.T_STOCK as ts
-		ts.PROD_CD = mp.PROD_CD
+		ON ts.PROD_CD = mp.PROD_CD
 		WHERE mp.IS_DELETE = 0
 		AND mp.PROD_CD = #{prod_cd}
 	</select>
@@ -54,5 +54,7 @@
 		<result property="sales_start_date" column="SALES_START_DATE" />
 		<result property="sales_end_date" column="SALES_END_DATE" />
 		<result property="artist_name_kj" column="ARTIST_NAME_KJ" />
+		<result property="stock" column="STOCK" />
+		<result property="provision" column="PROVISION" />
 	</resultMap>
 </mapper>

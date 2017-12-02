@@ -27,4 +27,12 @@ public class ProdResultServiceImpl implements ProdResultService{
 		return prodResultMapper.selectNewProdList();
 	}
 
+	@Override
+	public ProdResult checkProd(String prod_cd) {
+		// TODO 自動生成されたメソッド・スタブ
+		return prodResultMapper.checkProd(prod_cd);
+	}
+
+
+
 }
