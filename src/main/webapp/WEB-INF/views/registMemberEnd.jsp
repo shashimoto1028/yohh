@@ -23,11 +23,6 @@
 <body>
     <div class="container">
         <h3>会員登録が完了しました。</h3>
-        <form:form action="${pageContext.request.contextPath}/">
-        <div class="text-center" style="padding: 30px;">
-            <button type="submit" class="btn btn-success">トップページへ戻る<span class="glyphicon glyphicon-chevron-right"></span></button>
-        </div>
-        </form:form>
         <a href="/Test">
             <span style="text-decoration: underline">トップページへ戻る</span>
         </a>
