@@ -28,7 +28,7 @@ public class LogoutController {
 
 		session.invalidate();
 
-		return "redirect:/";
+		return "forward:/";
 	}
 
 }
