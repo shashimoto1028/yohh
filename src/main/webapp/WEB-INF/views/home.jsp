@@ -63,10 +63,10 @@
 												style="text-decoration: underline">ログアウト</span></a></li>
 									</c:if>
 									<c:if test="${empty customer.customer_name_kj}">
-									<li id="resister"><a
-										href="${pageContext.request.contextPath}/registMember"> <span
+										<li id="resister"><a
+											href="${pageContext.request.contextPath}/registMember"> <span
 											style="text-decoration: underline">会員登録</span>
-									</a></li>
+										</a></li>
 										<li id="login"><a
 											href="${pageContext.request.contextPath}/login"><span
 												style="text-decoration: underline">ログイン</span></a></li>
