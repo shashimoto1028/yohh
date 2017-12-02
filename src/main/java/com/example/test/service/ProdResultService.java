@@ -8,4 +8,6 @@ public interface ProdResultService {
 
 	public List<ProdResult> selectNewProd();
 
+	public ProdResult checkProd(String prod_cd);
+
 }
