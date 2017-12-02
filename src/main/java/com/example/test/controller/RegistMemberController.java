@@ -43,7 +43,6 @@ public class RegistMemberController {
 	//会員情報の登録処理
 	@RequestMapping(value = "/registMemberInsert", method = RequestMethod.POST)
 	public String registMemberInsert(@Valid RegistMemberForm form, BindingResult result) {
-
 		logger.info("会員登録：開始");
 
 		//入力情報のチェック（チェック内容はRegistMemberFormにアノテーションでかいてる）
