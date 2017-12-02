@@ -9,6 +9,7 @@ public class Customer {
 	private String ADDRESS;
 	private String TEL_NO;
 	private String MAIL_ADDRESS;
+	private String PASSWORD;
 
 	public String getCUSTOMER_NAME_KJ() {
 		return CUSTOMER_NAME_KJ;
@@ -51,6 +52,15 @@ public class Customer {
 	}
 	public void setMAIL_ADDRESS(String mAIL_ADDRESS) {
 		MAIL_ADDRESS = mAIL_ADDRESS;
+	}
+	public String getPASSWORD() {
+		return PASSWORD;
+	}
+	public void setPASSWORD(String pASSWORD) {
+		PASSWORD = pASSWORD;
+	}
+	public void setCUSTOMER_BIRTHDAY(String cUSTOMER_BIRTHDAY) {
+		CUSTOMER_BIRTHDAY = cUSTOMER_BIRTHDAY;
 	}
 
 }

@@ -31,7 +31,8 @@ public class RegistMemberServiceImpl implements RegistMemberService {
 		String ZIP_CD = form.getZip();
 		String ADDRESS = form.getAddress();
 		String TEL_NO = form.getTel();
-		String MAIL_ADDRESS = form.getTel();
+		String MAIL_ADDRESS = form.getMail();
+		String PASSWORD = form.getPassword();
 
 		logger.info("登録会員情報を登録");
 
@@ -43,6 +44,7 @@ public class RegistMemberServiceImpl implements RegistMemberService {
 		customer.setADDRESS(ADDRESS);
 		customer.setTEL_NO(TEL_NO);
 		customer.setMAIL_ADDRESS(MAIL_ADDRESS);
+		customer.setPASSWORD(PASSWORD);
 
 		logger.info("RegistMemberServiceImpl:insert直前");
 

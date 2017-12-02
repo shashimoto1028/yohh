@@ -74,6 +74,13 @@
             		<form:errors path="mail" cssStyle="color:red"/>
         		</div>
         </div>
+        <div class="row">
+        		<div class="form-group">
+            		<label>パスワード</label>
+            		<form:input path="password" class="form-control"/>
+            		<form:errors path="password" cssStyle="color:red"/>
+        		</div>
+        </div>
         <div class="text-center" style="padding: 30px;">
             <button type="submit" class="btn btn-success">登録 <span class="glyphicon glyphicon-chevron-right"></span></button>
         </div>

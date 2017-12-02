@@ -28,6 +28,11 @@
             <button type="submit" class="btn btn-success">トップページへ戻る<span class="glyphicon glyphicon-chevron-right"></span></button>
         </div>
         </form:form>
+        <a href="/Test">
+            <span style="text-decoration: underline">トップページへ戻る</span>
+        </a>
+        <br />あなたのcontext.request.contextPathは
+        ${pageContext.request.contextPath}
     </div>
 </body>
 </html>

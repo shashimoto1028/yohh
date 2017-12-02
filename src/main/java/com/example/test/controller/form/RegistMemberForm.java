@@ -35,6 +35,10 @@ public class RegistMemberForm {
 	@Email(message="形式が違います。")
 	private String mail;
 
+	@NotEmpty(message = "パスワードを入力してください")
+	@Pattern(regexp="[0-9a-zA-Z]{1,100}",message="英数字で入力してください。(100桁まで)")
+	private String password;
+
 	public String getName() {
 		return name;
 	}
@@ -76,6 +80,12 @@ public class RegistMemberForm {
 	}
 	public void setMail(String mail) {
 		this.mail = mail;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 
