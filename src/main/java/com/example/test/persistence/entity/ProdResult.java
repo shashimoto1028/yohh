@@ -1,7 +1,6 @@
 package com.example.test.persistence.entity;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 public class ProdResult {
 
@@ -19,9 +18,9 @@ public class ProdResult {
 
 	private String img_path;
 
-	private Date sales_start_date;
+	private String sales_start_date;
 
-	private Date sales_end_date;
+	private String sales_end_date;
 
 	private String artist_name_kj;
 
@@ -95,19 +94,19 @@ public class ProdResult {
 		this.img_path = img_path;
 	}
 
-	public Date getSales_start_date() {
+	public String getSales_start_date() {
 		return sales_start_date;
 	}
 
-	public void setSales_start_date(Date sales_start_date) {
+	public void setSales_start_date(String sales_start_date) {
 		this.sales_start_date = sales_start_date;
 	}
 
-	public Date getSales_end_date() {
+	public String getSales_end_date() {
 		return sales_end_date;
 	}
 
-	public void setSales_end_date(Date sales_end_date) {
+	public void setSales_end_date(String sales_end_date) {
 		this.sales_end_date = sales_end_date;
 	}
 
