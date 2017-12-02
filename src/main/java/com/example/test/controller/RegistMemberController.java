@@ -45,6 +45,7 @@ public class RegistMemberController {
 	public String registMemberInsert(@Valid RegistMemberForm form, BindingResult result) {
 		logger.info("会員登録：開始");
 
+
 		//入力情報のチェック（チェック内容はRegistMemberFormにアノテーションでかいてる）
 		if (result.hasErrors()) {
 			logger.info("入力エラー");
