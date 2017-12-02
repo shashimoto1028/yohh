@@ -20,16 +20,39 @@
 		ORDER BY mp.SALES_START_DATE desc
 		LIMIT 10;
 	</select>
-	<resultMap id="prodResultMap" type="com.example.test.persistence.entity.ProdResult">
-    <result property="prod_cd" column="PROD_CD" />
-    <result property="hinban_cd" column="HINBAN_CD" />
-    <result property="artist_cd" column="ARTIST_CD" />
-    <result property="category_div" column="CATEGORY_DIV" />
-    <result property="prod_name" column="PROD_NAME" />
-    <result property="disp_price" column="DISP_PRICE" />
-    <result property="img_path" column="IMG_PATH" />
-    <result property="sales_start_date" column="SALES_START_DATE" />
-    <result property="sales_end_date" column="SALES_END_DATE" />
-    <result property="artist_name_kj" column="ARTIST_NAME_KJ" />
+	<select id="checkProd" parameterType="String" resultMap="prodResultMap">
+		SELECT
+		mp.prod_cd
+		,mp.hinban_cd
+		,mp.artist_cd
+		,mp.category_div
+		,mp.prod_name
+		,mp.disp_price
+		,mp.img_path
+		,mp.sales_start_date
+		,mp.sales_end_date
+		,ma.artist_name_kj
+		,ts.stock
+		,ts.provision
+		FROM yohh.M_PRODUCT as mp
+		INNER JOIN yohh.M_ARTIST as ma
+		ON mp.ARTIST_CD = ma.ARTIST_CD
+		INNER JOIN yohh.T_STOCK as ts
+		ts.PROD_CD = mp.PROD_CD
+		WHERE mp.IS_DELETE = 0
+		AND mp.PROD_CD = #{prod_cd}
+	</select>
+	<resultMap id="prodResultMap"
+		type="com.example.test.persistence.entity.ProdResult">
+		<result property="prod_cd" column="PROD_CD" />
+		<result property="hinban_cd" column="HINBAN_CD" />
+		<result property="artist_cd" column="ARTIST_CD" />
+		<result property="category_div" column="CATEGORY_DIV" />
+		<result property="prod_name" column="PROD_NAME" />
+		<result property="disp_price" column="DISP_PRICE" />
+		<result property="img_path" column="IMG_PATH" />
+		<result property="sales_start_date" column="SALES_START_DATE" />
+		<result property="sales_end_date" column="SALES_END_DATE" />
+		<result property="artist_name_kj" column="ARTIST_NAME_KJ" />
 	</resultMap>
 </mapper>

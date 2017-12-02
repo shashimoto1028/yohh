@@ -25,6 +25,10 @@ public class ProdResult {
 
 	private String artist_name_kj;
 
+	private int stock;
+
+	private int provision;
+
 	public String getProd_cd() {
 		return prod_cd;
 	}
@@ -103,6 +107,22 @@ public class ProdResult {
 
 	public void setArtist_name_kj(String artist_name_kj) {
 		this.artist_name_kj = artist_name_kj;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	public int getProvision() {
+		return provision;
+	}
+
+	public void setProvision(int provision) {
+		this.provision = provision;
 	}
 
 }
