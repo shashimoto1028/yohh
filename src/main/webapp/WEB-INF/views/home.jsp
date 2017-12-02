@@ -58,7 +58,7 @@
 								</ul>
 								<ul id="headerLink02">
 									<li id="resister"><a
-										href="${pageContext.request.contextPath}/registMember"><span
+										href="${pageContext.request.contextPath}/registMember"> <span
 											style="text-decoration: underline">会員登録</span>
 									</a></li>
 									<c:if test="${not empty customer.customer_name_kj}">
