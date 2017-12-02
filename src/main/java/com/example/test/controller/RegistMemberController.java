@@ -2,6 +2,7 @@ package com.example.test.controller;
 
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.test.controller.form.RegistMemberForm;
+import com.example.test.persistence.entity.MCustomer;
 import com.example.test.service.RegistMemberServiceImpl;
 
 /**
@@ -27,6 +29,9 @@ public class RegistMemberController {
 
 	@Autowired
 	RegistMemberServiceImpl registMemberServiceImpl;
+
+	@Autowired
+	HttpSession session;
 
 	//これのおかげで画面からパラメータを受け取れる
 	@ModelAttribute
@@ -45,7 +50,6 @@ public class RegistMemberController {
 	public String registMemberInsert(@Valid RegistMemberForm form, BindingResult result) {
 		logger.info("会員登録：開始");
 
-
 		//入力情報のチェック（チェック内容はRegistMemberFormにアノテーションでかいてる）
 		if (result.hasErrors()) {
 			logger.info("入力エラー");
@@ -55,6 +59,8 @@ public class RegistMemberController {
 		int count = registMemberServiceImpl.regsitMember(form);
 		if(count == 1) {
 			logger.info("登録OK");
+			//登録が成功したタイミングでセッションに会員情報を追加
+			session.setAttribute("customer", replaceInstance(form));
 		}else {
 			logger.info("登録NG");
 		}
@@ -64,11 +70,18 @@ public class RegistMemberController {
 		return "registMemberEnd";
 	}
 
-	//会員情報の登録処理
-	@RequestMapping(value = "/registMemberEnd", method = RequestMethod.POST)
-	public String registMemberEnd() {
-		//登録完了画面を出力するだけ
-		return "registMemberEnd";
+	//入力フォーム情報をMcutomerクラスのインスタンスに詰める処理
+	private MCustomer replaceInstance(RegistMemberForm form) {
+		MCustomer mcustomer = new MCustomer();
+		mcustomer.setCustomer_name_kj(form.getName());
+		mcustomer.setCustomer_name_kn(form.getKana());
+		mcustomer.setAddress(form.getAddress());
+		mcustomer.setMail_address(form.getMail());
+		mcustomer.setTel_no(form.getTel());
+		mcustomer.setZip_cd(form.getZip());
+		mcustomer.setPassword(form.getPassword());
+
+		return mcustomer;
 	}
 
 }

@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MOCK</title>
+    <title>ログイン</title>
     <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
     <!-- BootstrapのCSS読み込み -->
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
@@ -41,7 +41,7 @@
             		<p style="color:red">${message}</p>
             </c:if>
 			<button type="submit">ログイン</button>
-			<a href="resister.jsp">&nbsp;新規会員登録はこちら</a>
+			<a href="${pageContext.request.contextPath}/registMember">&nbsp;新規会員登録はこちら</a>
         </form:form>
 
 
