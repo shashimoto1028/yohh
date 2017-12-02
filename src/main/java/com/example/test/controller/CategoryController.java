@@ -1,4 +1,4 @@
-package com.example.test.controller;
+	package com.example.test.controller;
 
 import java.util.List;
 import java.util.Locale;
@@ -16,11 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.test.controller.form.CategoryForm;
 import com.example.test.controller.form.SearchForm;
-import com.example.test.persistence.entity.CategoryListResult;
 import com.example.test.persistence.entity.MKbn;
-import com.example.test.service.CategoryService;
+import com.example.test.persistence.entity.ProdResult;
 import com.example.test.service.MKbnService;
-import com.example.test.service.SearchService;
+import com.example.test.service.ProdResultService;
 
 
 /**
@@ -36,16 +35,14 @@ public class CategoryController {
 	MKbnService mKbnService;
 
 	@Autowired
-	CategoryService categoryService;
+	ProdResultService prodresultservice;
 
-	@Autowired
-	SearchService searchService;
 
 	//カテゴリのマップ
 	Map<Integer, MKbn> categoryMap;
 
 	//カテゴリリスト「
-	List<CategoryListResult> categoryList;
+	List<ProdResult> categoryList;
 
 	@ModelAttribute
     public CategoryForm setUpCategoryForm() {
@@ -68,11 +65,11 @@ public class CategoryController {
 		categoryMap= mKbnService.init("PROD_CATEGORY");
 
 		// カテゴリリストの取得
-		categoryList= categoryService.init(categoryDiv);
+		categoryList= prodresultservice.init(categoryDiv);
 
-//		  for (CategoryListResult str : categoryList) {
-//		      System.out.println(str.getArtistNameKj());  // 結果：Windows、Linux、 OS X
-//		    }
+		  for (ProdResult str : categoryList) {
+				      System.out.println(str.getSales_start_date());
+		  }
 
 		model.addAttribute("categoryMap", categoryMap );
 		model.addAttribute("categoryList", categoryList );
@@ -83,12 +80,15 @@ public class CategoryController {
 	//検索ボタン押下時の処理
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(SearchForm searchForm,Model model) {
-		categoryList = searchService.init(searchForm);
+		categoryList = prodresultservice.searchList(searchForm);
 
+		model.addAttribute("categoryMap", categoryMap );
 		model.addAttribute("categoryList", categoryList );
 
 		return "category";
 	}
+
+	//ページャ処理
 
 
 }

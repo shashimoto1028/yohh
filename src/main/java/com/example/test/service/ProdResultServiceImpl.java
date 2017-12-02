@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.test.controller.form.SearchForm;
 import com.example.test.persistence.ProdResultMapper;
 import com.example.test.persistence.entity.ProdResult;
 
@@ -33,6 +34,18 @@ public class ProdResultServiceImpl implements ProdResultService{
 		return prodResultMapper.checkProd(prod_cd);
 	}
 
+	//商品一覧取得
+	@Override
+	public List<ProdResult> init(int categoryDiv) {
+		// TODO 自動生成されたメソッド・スタブ
+		return prodResultMapper.selectCategoryList(categoryDiv);
+	}
 
+	//検索処理
+	@Override
+	public List<ProdResult> searchList(SearchForm searchForm){
+	// TODO 自動生成されたメソッド・スタブ
+	return prodResultMapper.selectSearchList(searchForm);
+	}
 
 }

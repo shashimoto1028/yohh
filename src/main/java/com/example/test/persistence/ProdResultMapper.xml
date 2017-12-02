@@ -42,6 +42,82 @@
 		WHERE mp.IS_DELETE = 0
 		AND mp.PROD_CD = #{prod_cd}
 	</select>
+	<!-- 商品一覧取得SQL -->
+	<select id="selectCategoryList" parameterType="int" resultMap="prodResultMap">
+		SELECT
+		M_ARTIST.ARTIST_NAME_KJ
+		,M_ARTIST.ARTIST_NAME_KN
+		,M_PRODUCT.PROD_NAME
+		,M_PRODUCT.CATEGORY_DIV
+		,M_PRODUCT.PROD_NAME
+		,M_PRODUCT.SALES_START_DATE
+		,M_PRODUCT.DISP_PRICE
+		,M_PRODUCT.IMG_PATH
+		,T_STOCK.STOCK
+		FROM
+		(
+			SELECT
+			CATEGORY_DIV
+			,PROD_CD
+			,PROD_NAME
+			,ARTIST_CD
+			,SALES_START_DATE
+			,DISP_PRICE
+			,IMG_PATH
+			FROM
+			yohh.M_PRODUCT
+			WHERE
+			CATEGORY_DIV=#{categoryDiv}
+		) AS M_PRODUCT
+		INNER JOIN
+		yohh.M_ARTIST
+		ON
+		M_PRODUCT.ARTIST_CD =M_ARTIST.ARTIST_CD
+		INNER JOIN
+		yohh.T_STOCK
+		ON
+		M_PRODUCT.PROD_CD = T_STOCK.PROD_CD
+		Limit 10;
+	</select>
+	<!-- 商品一覧件数取得SQL -->
+	<select id="CategoryCount" parameterType="int" resultMap="prodResultMap">
+		SELECT
+		count(*) AS PROD_COUNT
+		FROM
+		yohh.M_PRODUCT
+		WHERE
+		CATEGORY_DIV=#{categoryDiv}
+	</select>
+	<!-- 検索処理 -->
+	<select id="selectSearchList" parameterType="com.example.test.controller.form.SearchForm" resultMap="prodResultMap">
+		SELECT
+		M_ARTIST.ARTIST_NAME_KJ
+		,M_ARTIST.ARTIST_NAME_KN
+		,M_PRODUCT.PROD_NAME
+		,M_PRODUCT.CATEGORY_DIV
+		,M_PRODUCT.SALES_START_DATE
+		,M_PRODUCT.DISP_PRICE
+		,M_PRODUCT.IMG_PATH
+		,T_STOCK.STOCK
+		FROM
+		yohh.M_PRODUCT
+		INNER JOIN
+		yohh.M_ARTIST
+		ON
+		M_PRODUCT.ARTIST_CD =M_ARTIST.ARTIST_CD
+		INNER JOIN
+		yohh.T_STOCK
+		ON
+		M_PRODUCT.PROD_CD = T_STOCK.PROD_CD
+		WHERE
+		(
+			M_ARTIST.ARTIST_NAME_KJ LIKE '%${search}%'
+			OR
+			M_ARTIST.ARTIST_NAME_KN LIKE '%${search}%'
+			OR
+			PROD_NAME LIKE '%${search}%'
+		)
+	</select>
 	<resultMap id="prodResultMap"
 		type="com.example.test.persistence.entity.ProdResult">
 		<result property="prod_cd" column="PROD_CD" />
@@ -54,7 +130,9 @@
 		<result property="sales_start_date" column="SALES_START_DATE" />
 		<result property="sales_end_date" column="SALES_END_DATE" />
 		<result property="artist_name_kj" column="ARTIST_NAME_KJ" />
+		<result property="artist_name_kn" column="ARTIST_NAME_KN" />
 		<result property="stock" column="STOCK" />
 		<result property="provision" column="PROVISION" />
+		<result property="prod_Count" column="PROD_COUNT" />
 	</resultMap>
 </mapper>

@@ -25,9 +25,19 @@ public class ProdResult {
 
 	private String artist_name_kj;
 
+	private String artist_name_kn;
+
 	private int stock;
 
 	private int provision;
+
+	public String getArtist_name_kn() {
+		return artist_name_kn;
+	}
+
+	public void setArtist_name_kn(String artist_name_kn) {
+		this.artist_name_kn = artist_name_kn;
+	}
 
 	public String getProd_cd() {
 		return prod_cd;

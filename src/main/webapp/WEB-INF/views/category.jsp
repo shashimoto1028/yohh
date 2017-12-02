@@ -79,18 +79,18 @@
                             <td class="col-sm-7">
                                 <div class="discographyTableImg01">
                                     <p>
-                                        <a href="product.html"><img src="${category.imgPath}" class="img-responsive" width="120" height="120" alt=""></a>
+                                        <a href="product.html"><img src="${category.img_path}" class="img-responsive" width="120" height="120" alt=""></a>
                                     </p>
                                 </div>
                                 <div class="discographyTable01In">
-                                    <p><a href="product.html"><c:out value="${category.prodName}"/></a></p>
-                                    <p><a href="product.html"><c:out value="${category.artistNameKj}"/></a></p>
-                                    <p>発売日:<c:out value="${category.salesStartDate}"/>
+                                    <p><a href="product.html"><c:out value="${category.prod_name}"/></a></p>
+                                    <p><a href="product.html"><c:out value="${category.artist_name_kj}"/></a></p>
+                                    <p>発売日:<c:out value="${category.sales_start_date}"/>
                                     </p>
                                 </div>
                             </td>
                             <td class="col-sm-2" valign="top">
-                                <p class="bbbb">価格：<c:out value="${category.dispPrice}"/>円</p>
+                                <p class="bbbb">価格：<c:out value="${category.disp_price}"/>円</p>
                                 <p class="aaaa">
 	                                <c:if test="${category.stock > 0}">
                                     <a href="cart.html"><img src="resources/images/bt_03_s2_on.png" class="img-responsive" width="120" height="120" alt=""></a>
